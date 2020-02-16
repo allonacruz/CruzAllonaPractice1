@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Maker</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css?family=CenturyGothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src = "form.js">	</script>
+</head>
+<body>
+    <div class="fixed-header">
+<h1> Create a New Event</h1></div>
+    <form style="padding-top: 70px;">
+        <fieldset style="margin: auto;">
+
+    <label for="type" style="padding-right: 30px;"><b>Event Type:</b></label>
+    <select class="inx" id="type" name="event-type">
+        <option value="none">Choose One</option> 
+      <option value="conference">Conference</option>
+      <option value="seminar">Seminar</option>
+      <option value="meeting">Meeting</option>
+      <option value="teambldg">Team-Building</option>
+      <option value="presscon">Press Conference</option>
+      <option value="themeparty">Theme Party</option>
+      <option value="awarding">Awarding</option>
+      <option value="wedding">Wedding</option>
+      <option value="birthday">Birthday</option>
+      <option value="family">Family</option>
+    </select>
+    <br><br>
+    <label for="title" style="padding-right: 36px;"><b>Event Title:</b></label>
+    <input type ="text" class="inx" id="etitle"required></input><br><br>
+    <label for="date" style="padding-right: 22px;"><b>Event Dates:</b></label>
+    <input type="date" class="inx" id="startdate" required></input> to 
+    <input type="date" class="inx" id="enddate" required oninput="conf()"></input><br><br>
+    <label for="postdate" style="padding-right: 17px;"><b>Posting Date:</b></label>
+    <input type="date" class="inx" id="postdate"></input>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <div>
+        <input type="checkbox" class="inx" id="in1"></input>
+        <label for="in1"><b>Is Registration required?</b></label><br><br>
+    </div>    
+    <div>
+        <input type="checkbox" class="inx" id="in2" name="in2" onchange="val()"></input>
+        <label for="in2" ><b>Is this event associated with any Family Programs?</b></label>
+        <br>
+        <div style="display:none" id="div1">
+            <label for="org"> Name of the Organization: </label>
+            <input type="text" class="inx" id="org" required></input><br><br>
+            <label for="prog" > Program title: </label>
+            <input type="text" class="inx" id="prog" required></input>
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" id="in3" class="inx" name="in3" onchange="val2()"></input>
+        <label for="in3"><b>Upon Registration Completion, Are users to receive an Auto generated Email?</b></label><br>
+            <div style="display:none" id="div2">
+            Content of the Auto-Generated Email:<br>
+            <textarea id="aemai" class="inx" cols="100" rows = "4" required></textarea><br>
+            
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" class="inx" id="in4" onchange="val3()"></input>
+        <label for="in4"><b>Is there a Point of Contact?</b></label><br>
+        <div style="display:none" id="div3">
+            <label for="poc">Contact Name:</label>
+            <input type="text" class="inx" id="poc" required></input><br><br>
+            <label for="pocnum" > Contact Number: </label>
+            <input type="number" class="inx" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" id="in5" class="inx" onchange="val4()"></input>
+        <label for="in5"><b>Is there a Hosting Command Point of Contact?</b></label><br>
+        <div style="display:none" id="div4">
+            <label for="poc"> Contact Name: </label>
+            <input class="inx" type="text" id="poc" required></input><br><br>
+            <label for="pocnum" > Contact Number: </label>
+            <input class="inx" type="number" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
+        </div>
+    </div>
+    </fieldset>
+    <br>
+    <p style="text-align: center;"><button class="button"><input type = "submit" class="button" value = "Save" onclick="subm()" /></button>
+    <button class="button"><input type = "reset" class="button" value = "Cancel"/></button></p></form>
+</form>
+</body>
+</html>
